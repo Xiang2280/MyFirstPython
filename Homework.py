@@ -3,7 +3,7 @@ import sys
 import jieba
 
 root_dir = r"G:\Python Learning\201808"
-with open("問卦Title.csv", "w") as abstract:
+with open("title.csv", "w") as abstract:
    
     for file in os.listdir(root_dir):
         file_name = root_dir + "\\" + file
@@ -26,9 +26,9 @@ with open("問卦Title.csv", "w") as abstract:
         abstract.write("\n")
     filein.close()
 
-fileTitle = open("問卦Title.csv",'r').read()
+fileTitle = open("Title.csv",'r').read()
 seglist = jieba.cut(fileTitle, cut_all = False) 
-test = open('問卦jieba.csv','wt')
+test = open('afterJieba.csv','wt')
 for i in seglist:
     test.write(i + '\n')
 test.close()
